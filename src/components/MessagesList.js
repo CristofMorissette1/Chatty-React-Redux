@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Message from './Messages'
 
 const MessagesList = ({messages}) => {
-    <section>
+    <section id="messages-list">
         <ul>
             {messages.map(message => {
                 <Message 
