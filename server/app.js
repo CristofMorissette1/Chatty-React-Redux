@@ -40,4 +40,12 @@ wss.on('connection', (ws) => {
                     break
         }
     })
+
+wss.on('close', () => {
+    users.splice(index, 1)
+    broadcast({
+        type: 'USERS_LIST',
+        users
+    }, ws)
+})
 })
