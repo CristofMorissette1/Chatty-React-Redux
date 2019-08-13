@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import {createStore} from 'redux';
-import chat from 'reducers'
-import { create } from 'handlebars';
+import reducers from './reducers'
 
-const store = createStore(chat)
+
+const store = createStore(reducers)
 
 ReactDOM.render(
 <Provider store={store}>
