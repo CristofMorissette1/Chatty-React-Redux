@@ -1,10 +1,11 @@
 import * as types from '../constants/ActionTypes'
-import { addUser, messageReceiced, populateUsersList } from '../actions'
+import { addUser, populateUsersList } from '../actions'
+import { messageReceiced } from '../actions'
 
 const setupSocket = (dispatch, username) => {
     const socket = new WebSocket('ws://localhost:8989')
 
-    socket.onopen = () => {
+    socaket.onopen = () => {
         socket.send(JSON.stringify({
             type: types.ADD_USER,
             name: username
