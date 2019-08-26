@@ -20,7 +20,7 @@ export const messageReceived = (message, author) => ({
     type: types.MESSAGE_RECEIVED, 
     id: nextMessageId++, 
     message,  
-    author
+    author      
 })
 
 export const populateUsersList = users => ({
