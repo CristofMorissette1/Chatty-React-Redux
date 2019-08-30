@@ -7,9 +7,9 @@ import { Provider } from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducers';
 import handleNewMessage from './sagas';
-import username from 'utils/name';
+import username from './utils/name';
 import { addUser } from './actions';
-import { setupSocket } from './sockets';
+import setupSocket from './sockets';
 import createSagaMiddlewar from 'redux-saga';
 
 
@@ -18,7 +18,10 @@ const sagaMiddleware = createSagaMiddlewar()
 const store = createStore(
     reducers,
     applyMiddleware(sagaMiddleware))
-store.dispatch(addUser("Me"))
+
+const socket = setupSocket(store.dispatch, username)
+
+sagaMiddleware.run(handleNewMessage, {socket, username})
 
 ReactDOM.render(
 <Provider store={store}>
