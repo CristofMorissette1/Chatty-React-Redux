@@ -9,7 +9,7 @@ import reducers from './reducers';
 import handleNewMessage from './sagas';
 import username from './utils/name';
 import { addUser } from './actions';
-import setupSocket from './sockets';
+import setupSocket from './sockets'; 
 import createSagaMiddlewar from 'redux-saga';
 
 
